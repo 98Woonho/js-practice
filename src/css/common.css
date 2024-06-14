@@ -61,6 +61,10 @@ header {
     height: 100px;
 }
 
+#menuIcon {
+    display: none;
+}
+
 body.dark-mode header {
     background-color: #4a4a4a;
 }
@@ -212,7 +216,13 @@ main {
     padding-top: 100px;
 }
 
+#movies {
+    display: grid;
+    grid-gap: 30px;
+}
+
 #movies img {
+    width: 100%;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #333333;
     transition: transform 0.3s ease; /* 부드러운 확대 효과를 위해 전환을 설정합니다. */
@@ -240,44 +250,114 @@ body.dark-mode footer {
 /* 세로모드 모바일 디바이스 */
 @media all and (max-width: 575px) {
     #movies {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 50px;
+    }
+
+    header .logo {
+        display: none;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    #menuIcon {
+        display: block;
+    }
+
+    header .flex-1 {
+        display: none;
+    }
+
+    header .content-container {
+        justify-content: space-between;
+    }
+
+    .dark-mode-toggle {
+        margin: unset;
+    }
+
+    .search-box input {
+        width: 150px;
     }
 }
 
 /* 가로모드 모바일 디바이스 */
 @media all and (min-width: 576px) and (max-width: 767px) {
     #movies {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header .logo {
+        display: none;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    #menuIcon {
+        display: block;
+    }
+
+    header .flex-1 {
+        display: none;
+    }
+
+    header .content-container {
+        justify-content: space-between;
+    }
+
+    .dark-mode-toggle {
+        margin: unset;
+    }
+
+    .search-box input {
+        width: 300px;
     }
 }
 
 /* 태블릿 디바이스 */
 @media all and (min-width: 768px) and (max-width: 991px) {
     #movies {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 50px;
+    }
+
+    header .logo {
+        display: none;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    #menuIcon {
+        display: block;
+    }
+
+    header .flex-1 {
+        display: none;
+    }
+
+    header .content-container {
+        justify-content: space-between;
+    }
+
+    .dark-mode-toggle {
+        margin: unset;
     }
 }
 
 /*태블릿 디바이스*/
 @media all and (min-width: 991px) and (max-width: 1200px) {
     #movies {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /*데스크탑*/
 @media all and (min-width: 1201px) {
     #movies {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 50px;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
