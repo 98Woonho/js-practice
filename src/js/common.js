@@ -1,4 +1,4 @@
-const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
 
 // 스크롤 맨 위로 이동 버튼 함수
 const handleScrollUpBtn = () => {
@@ -8,22 +8,14 @@ const handleScrollUpBtn = () => {
     });
 }
 
-
-
-let isToggled = false;
-
 // 다크모드 토글
-const handleDarkModeToggle = (btn) => {
+const handleDarkModeToggle = () => {
     const body = document.querySelector('body');
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('dark-mode', isDarkMode);
+}
 
-    if (!isToggled) {
-        btn.style.left = '45px';
-        darkModeToggle.style.backgroundColor = '#e8e8e8';
-        body.classList.add('dark-mode');
-    } else {
-        btn.style.left = '5px';
-        darkModeToggle.style.backgroundColor = '#333333';
-        body.classList.remove('dark-mode');
-    }
-    isToggled = !isToggled;
+if (localStorage.getItem('dark-mode') === 'true') {
+    body.classList.add('dark-mode');
 }

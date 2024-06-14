@@ -1,4 +1,5 @@
 const movieId = location.search.split('=')[1];
+const swiperWrapper = document.querySelector('.swiper-wrapper');
 
 function getMovie() {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`, {
@@ -30,7 +31,7 @@ function getMovie() {
             poster.src = `https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`;
             movieTitle.innerText = movie.title;
             genres.innerText = movie.genres.map(genre => genre.name).join(', ');
-            voteAverage.innerText = Math.round(movie.vote_average * 10) + '%';
+            voteAverage.innerText = `회원 평점 : ${Math.round(movie.vote_average * 10)}%`;
             releaseDate.innerText = movie.release_date + ' 개봉';
             runtime.innerText = movie.runtime + '분';
             overview.innerText = movie.overview;
@@ -50,6 +51,7 @@ function getTrailer() {
         }
     })
         .then(res => {
+
             const trailerKey = res.data.results.filter(result => result.type === 'Trailer')[0].key;
             const trailer = document.getElementById('trailer');
             trailer.src = `https://www.youtube.com/embed/${trailerKey}`
@@ -60,3 +62,43 @@ function getTrailer() {
 }
 
 getTrailer();
+
+function getImages() {
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}/images`, {
+        headers: {
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGQ2YjY5OGJkZjMyNDk0ZmU1NDYzOGU3ZmVmNjk4YiIsInN1YiI6IjY2NjY0YzIxNTlmMjE0ODE2OGExNTM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kwltZDxWbQYihnw7WWODdmwrkr8DpVUSZZRmYiITxAw',
+            accept: 'application/json'
+        }
+    })
+        .then(res => {
+            for (backdrop of res.data.backdrops) {
+                const div = document.createElement('div');
+                const img = document.createElement('img');
+
+                div.classList.add('swiper-slide');
+                img.src = `https://image.tmdb.org/t/p/original${backdrop.file_path}`
+                div.appendChild(img);
+                swiperWrapper.appendChild(div);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
+getImages();
+
+
+// swiper 설정
+const mySwiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    }
+});

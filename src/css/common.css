@@ -150,6 +150,10 @@ body.dark-mode header .content-container ul li a:hover {
     box-shadow: 1px 1px 5px #333333;
 }
 
+body.dark-mode .dark-mode-toggle {
+    background-color: #e8e8e8;
+}
+
 .dark-mode-toggle img {
     width: 30px;
     height: 30px;
@@ -170,7 +174,9 @@ body.dark-mode header .content-container ul li a:hover {
     transition-timing-function: ease;
 }
 
-
+body.dark-mode .toggle-button {
+    left: 45px;
+}
 
 .scroll-up-btn {
     position: fixed;
