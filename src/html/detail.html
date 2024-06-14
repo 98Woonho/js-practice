@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <script src="../js/detail.js" defer></script>
+    <script src="../js/common.js" defer></script>
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+            integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <title>상세정보</title>
+</head>
+<body>
+
+<header>
+    <div class="content-container">
+        <a href="index.html">
+            <h1 class="logo">로고</h1>
+        </a>
+        <ul>
+            <li>
+                <a href="genre.html">GENRE</a>
+            </li>
+            <li>
+                <a href="nowPlaying.html">NOW PLAYING</a>
+            </li>
+            <li>
+                <a href="upcoming.html">UPCOMING</a>
+            </li>
+        </ul>
+        <div class="flex-1"></div>
+        <div class="search-box">
+            <input type="text" placeholder="제목을 입력하세요">
+            <button></button>
+        </div>
+        <div class="dark-mode-toggle" id="darkModeToggle">
+            <button class="toggle-button" onClick="handleDarkModeToggle(this)"></button>
+            <img src="../icons/moon-icon.png" alt="">
+            <img src="../icons/sun-icon.png" alt="">
+        </div>
+    </div>
+</header>
+
+<main>
+    <button class="scroll-up-btn" onClick="handleScrollUpBtn()">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nO3VOw6CQBhF4dmBgi2F+1+Cj0YbNT4aOguXcgw6kQmBYQoT/iH3JCRESZgvt8A5pZRScwxYNpfLOaAEbv4qXcZLXGh7ACuXOSI/DFAAV3/w54/Q3jf/FS6DJc7+wC9gHUCqAHM3uwyw6CL875/8fRdTZoHoQkxjiCD6ICYxfBGnIcQQpAcz3XeGBEQMYgJDImIMMjkG2Abfhmrk2SikB7P5+4EjL94D9RgiFRJgamDnLJYKMR+CGEuLWEuLWEuLWEuLWEuLWEuLWEuLWEuLWGtOixyBw9TnUEoppVykN2KYhobLaYgPAAAAAElFTkSuQmCC">
+    </button>
+
+    <div class="content-container">
+        <h1>상세정보</h1>
+        <div id="movieInfo">
+            <img id="poster" src="" alt="">
+            <div>
+                <h1 id="movieTitle"></h1>
+                <span id="genres"></span>,
+                <span id="releaseDate"></span>,
+                <span id="runtime"></span>
+                <div id="ratingContainer">
+                    <div class="gauge">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACS0lEQVR4nO2dzS7EYBhGnw1XwVL8XSoGcRcyscdl4DIkzNiRPNKkNjaG+Tp9erwnebftOV+1U120UlEURVEURVEURQa7kuaSFpK85nTbuJG0P3bUlBb/ucHCf59umztjx02B+QCL/zXXY8dNgcWAB+B17Lgp4IGnqAOQjesMqAOA5ljSuaRHSW8DXMN/u7233mUm6UhgtiVdSfoY+EfUa0zndilpS8DFv9/QXYwbzB3tIFxt8DbSjeZCoGv+upcd9/OywX/k3iUdCsB5w7/K+Qr7u2m4vzMBeGr4MG1vhf3tN3yY9yAAiwbPb+YrLv4XO/2Dt9c19925T56fIscm3Q8f6HA/fKDD/fCBDvfDBzrcDx/ocD98oMP98IEO98MHOtwPH+hwP3ygw/3wgQ73wwc63A8f6HA/fKDD/fCBDvfDBzrcDx/ocD98oMP98IEO98MHOtwPH+hwP3ygw/3wgQ73wwc63A8f6HA/fKDD/fCBDvfDBzrcDx/ocD98oMP98IEO98MHOtwPH+hwP3ygw/3wgQ73wwc63A8f6HA/fKDD/fCBDvfDBzrcDx/ocD98oMP98IEO98MHOtwPH+hwP3ygw/3wgQ73wwc63A8f6HA/fKDD/fCBDvfDBzrcDx/ocD98oMP98IEO94v+KI8HHsRHfx4DFtL/+dXFs4CF9B/nRACOGr6+3huc7vX1B4JwGbCg/uV0Zy6Grf6zIJ7I3NI+YaI+6KI/tZMvOzPi4n//TTjr7zCWAYu+7F1OKZ8sKYqiKIqiKIpC0XwC4L2y3SCzytYAAAAASUVORK5CYII=">
+                        <div id="progress"></div>
+                    </div>
+                    <p id="voteAverage"></p>
+                </div>
+                <div id="overview"></div>
+            </div>
+        </div>
+        <div>
+            <h2>트레일러</h2>
+            <iframe id="trailer" width="100%" height="700px" src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

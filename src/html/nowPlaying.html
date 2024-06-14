@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/nowPlaying.css">
+
+    <script src="../js/nowPlaying.js" defer></script>
+    <script src="../js/common.js" defer></script>
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+            integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>현재 상영중</title>
+</head>
+<body>
+<header>
+    <div class="content-container">
+        <a href="index.html">
+            <h1 class="logo">로고</h1>
+        </a>
+        <ul>
+            <li>
+                <a href="genre.html">GENRE</a>
+            </li>
+            <li>
+                <a class="selected" href="nowPlaying.html">NOW PLAYING</a>
+            </li>
+            <li>
+                <a href="upcoming.html">UPCOMING</a>
+            </li>
+        </ul>
+        <div class="flex-1"></div>
+        <div class="search-box">
+            <input type="text" placeholder="제목을 입력하세요">
+            <button></button>
+        </div>
+        <div class="dark-mode-toggle" id="darkModeToggle">
+            <button class="toggle-button" onClick="handleDarkModeToggle(this)"></button>
+            <img src="../icons/moon-icon.png" alt="">
+            <img src="../icons/sun-icon.png" alt="">
+        </div>
+    </div>
+</header>
+
+<main>
+    <button class="scroll-up-btn" onClick="handleScrollUpBtn()">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nO3VOw6CQBhF4dmBgi2F+1+Cj0YbNT4aOguXcgw6kQmBYQoT/iH3JCRESZgvt8A5pZRScwxYNpfLOaAEbv4qXcZLXGh7ACuXOSI/DFAAV3/w54/Q3jf/FS6DJc7+wC9gHUCqAHM3uwyw6CL875/8fRdTZoHoQkxjiCD6ICYxfBGnIcQQpAcz3XeGBEQMYgJDImIMMjkG2Abfhmrk2SikB7P5+4EjL94D9RgiFRJgamDnLJYKMR+CGEuLWEuLWEuLWEuLWEuLWEuLWEuLWEuLWGtOixyBw9TnUEoppVykN2KYhobLaYgPAAAAAElFTkSuQmCC">
+    </button>
+
+    <div class="content-container">
+        <h1>현재 상영중</h1>
+
+        <div class="movie-container" id="movieContainer">
+
+        </div>
+    </div>
+</main>
+
+<footer>
+
+</footer>
+</body>
+</html>

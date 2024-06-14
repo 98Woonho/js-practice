@@ -1,0 +1,44 @@
+body {
+    position: relative;
+}
+
+.btn-container button {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid #676767;
+    background-color: #fdfdfd;
+}
+
+.btn-container button:hover {
+    background-color: #d6d6d6;
+}
+
+.btn-container button.selected {
+    background-color: #d6d6d6;
+}
+
+body.dark-mode .btn-container button {
+    background-color: #171717;
+    border: 1px solid #9c9c9c;
+    color: #cfcfcf;
+}
+
+body.dark-mode .btn-container button:hover {
+    background-color: #373737;
+}
+
+body.dark-mode .btn-container button.selected {
+    background-color: #373737;
+}
+
+#sortSelect {
+    position: absolute;
+    right: 0;
+}
+body.dark-mode #sortSelect {
+    background-color: #171717;
+    border: 1px solid #9c9c9c;
+    color: #cfcfcf;
+}
+

@@ -1,0 +1,216 @@
+.flex-1 {
+    flex: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+button, input {
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.content-container {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+main .content-container {
+    margin-top: 5rem;
+}
+
+body.dark-mode {
+    background-color: #171717;
+    color: #cfcfcf;
+}
+
+header {
+    z-index: 999;
+    width: 100vw;
+    position: fixed;
+    background-color: #f3f3f3;
+    height: 100px;
+}
+
+body.dark-mode header {
+    background-color: #4a4a4a;
+}
+
+header .logo {
+    cursor: pointer;
+}
+
+header .content-container {
+    height: 100%;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .content-container ul {
+    margin-left: 1rem;
+}
+
+header .content-container ul li {
+    width: 130px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+header .content-container ul li a {
+    font-weight: 600;
+}
+
+header .content-container ul li a.selected {
+    color: #ff3a3a;
+}
+
+header .content-container ul li div {
+    position: absolute;
+    margin-top: 2px;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+}
+
+header .content-container ul li a:hover {
+    border-bottom: 0.175rem solid black;
+}
+
+body.dark-mode header .content-container ul li a:hover {
+    border-bottom: 0.175rem solid #cfcfcf;
+}
+
+
+.search-box {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-box input {
+    width: 500px;
+    height: 40px;
+    padding: 0 2.5rem 0 1rem;
+
+    background-color: #dddddd;
+    border-radius: 20px;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box button {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChklEQVR4nO2Zu24TQRSGPxeElgYbEVIYHoECCJdXQAIH+YKECA+AxEVESAl0wAsgUUEKpCiiIDFKDYGGS96AhhZSBZGQ2MFwpH+lKQxi8czYu+wnjbTy5f/3jPecOTOGgoKR5AAwDcwDa8A6sKPxBfig9y4DFUaQM0Ab6AC9vxz22WXgNCPAEWDFubku8Aq4BhwDysAeDbs+DlwHVvXZ5HsvgMPDCqIFfNWNfAPuAftTfN8Cuw9sSmMDaBCZOWc2F4DxAbQOAYuO3iyRuCvDH7ouedK9CuzGCqYlIzOsBdCfcoKpEzCxk5y4FcoEmHFyphrCYMXJiZCUnJxph1gneqowE4RnXJWwB5zyKdyWqJXYWFhpNs8ln21HRwtYmnViUGyd6aq9seuBuaKZeUl8Xsv7kg+xeYlZ2xGbG/J+7ENsTWLWO8VmUt7vfIitSyxmfiRU5P3Zh9i2xMaIz155f89LIBt5ebQ++kx22xTF5qS8rQznovw+8iE2LTHbnsbmjbzP+XpOkxbFS6uQskXpAPt8iS5rZqyRi8UDeVpL740TEt0aQht/1Ld425khX/v0fpj2M3k9D2FQ1cLU03Y0FLflYSeTB0OZNJzDBzso8M0F5/DhLIGZdYKZ8fSYlfRLJEHs6sSGWMEkOWOHbP/KhJMT7rDS2yQCdSdnNlWa06wzZZXYLacx7PYJpkEEqk41S4xX1VpMajEd06jotZvqndybXlBiN4cZDDqyWUr5t4JtD572aUZ/F0ydiJR1UPAEeK8Suq3F7RPwFniom/rTtqAxCsH4wsp7p08wF8lRMC0yyFSegqn9D8E0yWgwO0UwGSkAc2SU885jdoeMU4v5d3ZBwa8Z+Ak4rhMJLuUtjQAAAABJRU5ErkJggg==");
+    background-size: cover;
+    background-color: #dddddd;
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.dark-mode-toggle {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px;
+
+    margin-left: 50px;
+    width: 80px;
+    height: 40px;
+
+    background-color: #333333;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px #333333;
+}
+
+.dark-mode-toggle img {
+    width: 30px;
+    height: 30px;
+}
+
+.toggle-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    left: 5px;
+
+    box-shadow: 1px 1px 5px #1e1e1e;
+
+    transition-duration: 0.25s;
+    transition-property: left;
+    transition-timing-function: ease;
+}
+
+
+
+.scroll-up-btn {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff6565;
+    right: 30px;
+    bottom: 30px;
+}
+
+.scroll-up-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+
+main {
+    padding-top: 100px;
+}
+
+.movie-container {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 50px;
+}
+
+.movie-container img {
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #333333;
+    transition: transform 0.3s ease; /* 부드러운 확대 효과를 위해 전환을 설정합니다. */
+}
+
+.movie-container img:hover {
+    transform: scale(1.1); /* 마우스 오버 시 이미지를 1.1배 확대합니다. */
+}
+
+footer {
+    height: 400px;
+    background-color: #dddddd;
+}
