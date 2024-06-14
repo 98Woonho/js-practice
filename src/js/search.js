@@ -1,8 +1,10 @@
+const title = location.search.split('=')[1];
+
 let page = 1;
 
 // 페이지 별 영화 목록 가져오기
 function getMovies(page) {
-    axios.get(`https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=${page}`, {
+    axios.get(`https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=ko-KR&page=${page}`, {
         headers: {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGQ2YjY5OGJkZjMyNDk0ZmU1NDYzOGU3ZmVmNjk4YiIsInN1YiI6IjY2NjY0YzIxNTlmMjE0ODE2OGExNTM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kwltZDxWbQYihnw7WWODdmwrkr8DpVUSZZRmYiITxAw',
             accept: 'application/json'
@@ -31,7 +33,6 @@ function getMovies(page) {
 }
 
 getMovies(page);
-
 
 // 무한 스크롤
 window.addEventListener('scroll', function () {

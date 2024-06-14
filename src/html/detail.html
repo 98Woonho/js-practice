@@ -42,8 +42,8 @@
         </ul>
         <div class="flex-1"></div>
         <div class="search-box">
-            <input type="text" placeholder="제목을 입력하세요">
-            <button></button>
+            <input type="text" id="titleInput" placeholder="제목을 입력하세요">
+            <button onClick="handleSearch()"></button>
         </div>
         <div class="dark-mode-toggle" id="darkModeToggle">
             <button class="toggle-button" onClick="handleDarkModeToggle()"></button>
@@ -59,8 +59,8 @@
     </button>
 
     <div class="content-container">
-        <h1>상세정보</h1>
-        <div id="movieInfo">
+        <h1 class="main-title">상세정보</h1>
+        <div id="movieInfo" class="content">
             <img id="poster" src="" alt="">
             <div>
                 <h1 id="movieTitle"></h1>
@@ -77,17 +77,12 @@
                 <div id="overview"></div>
             </div>
         </div>
-        <div>
+        <div id="trailerContainer" class="content">
             <h2>트레일러</h2>
-            <iframe id="trailer" width="100%" height="700px" src=""
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
         </div>
-        <div>
+        <div class="content">
             <h2>이미지</h2>
-            <div class="swiper-container">
+            <div id="swiper">
                 <div class="swiper-wrapper"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -97,7 +92,8 @@
 </main>
 
 <footer>
-
+    <h1 class="logo">로고</h1>
+    <p>&copy; 2024 WHL All Rights Reserved.</p>
 </footer>
 
 </body>

@@ -1,5 +1,6 @@
 const movieId = location.search.split('=')[1];
 const swiperWrapper = document.querySelector('.swiper-wrapper');
+const trailerContainer = document.getElementById('trailerContainer');
 
 function getMovie() {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`, {
@@ -43,7 +44,7 @@ function getMovie() {
 
 getMovie();
 
-function getTrailer() {
+function getTrailer(string, type) {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=ko-KR`, {
         headers: {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGQ2YjY5OGJkZjMyNDk0ZmU1NDYzOGU3ZmVmNjk4YiIsInN1YiI6IjY2NjY0YzIxNTlmMjE0ODE2OGExNTM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kwltZDxWbQYihnw7WWODdmwrkr8DpVUSZZRmYiITxAw',
@@ -51,10 +52,27 @@ function getTrailer() {
         }
     })
         .then(res => {
+            if (res.data.results.length !== 0) {
+                const trailerKey = res.data.results.filter(result => result.type === 'Trailer')[0].key;
+                const trailer = new DOMParser().parseFromString(`
+                    <iframe id="trailer" width="100%" height="700px" src="https://www.youtube.com/embed/${trailerKey}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+                `, 'text/html').getElementById('trailer');
 
-            const trailerKey = res.data.results.filter(result => result.type === 'Trailer')[0].key;
-            const trailer = document.getElementById('trailer');
-            trailer.src = `https://www.youtube.com/embed/${trailerKey}`
+                trailerContainer.appendChild(trailer);
+            } else {
+                const div = document.createElement('div');
+                div.classList.add('none-trailer');
+                const span = document.createElement('span');
+
+                span.innerText = '트레일러가 존재하지 않습니다.';
+                div.appendChild(span);
+                trailerContainer.appendChild(div);
+            }
+
         })
         .catch(err => {
             console.log(err);
@@ -90,7 +108,7 @@ getImages();
 
 
 // swiper 설정
-const mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('#swiper', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     navigation: {

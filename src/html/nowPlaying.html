@@ -38,8 +38,8 @@
         </ul>
         <div class="flex-1"></div>
         <div class="search-box">
-            <input type="text" placeholder="제목을 입력하세요">
-            <button></button>
+            <input type="text" id="titleInput" placeholder="제목을 입력하세요">
+            <button onClick="handleSearch()"></button>
         </div>
         <div class="dark-mode-toggle" id="darkModeToggle">
             <button class="toggle-button" onClick="handleDarkModeToggle()"></button>
@@ -55,16 +55,10 @@
     </button>
 
     <div class="content-container">
-        <h1>현재 상영중</h1>
+        <h1 class="main-title">현재 상영중</h1>
 
-        <div class="movie-container" id="movieContainer">
-
-        </div>
+        <div id="movies"></div>
     </div>
 </main>
-
-<footer>
-
-</footer>
 </body>
 </html>

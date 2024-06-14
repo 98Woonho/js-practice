@@ -2,7 +2,7 @@ let page = 1;
 
 // 페이지 별 영화 목록 가져오기
 function getMovies(page) {
-    axios.get(`https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=${page}`, {
+    axios.get(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=${page}&primary_release_date.gte=2024-06-15&primary_release_date.lte=2024-07-15&sort_by=popularity.desc`, {
         headers: {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGQ2YjY5OGJkZjMyNDk0ZmU1NDYzOGU3ZmVmNjk4YiIsInN1YiI6IjY2NjY0YzIxNTlmMjE0ODE2OGExNTM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kwltZDxWbQYihnw7WWODdmwrkr8DpVUSZZRmYiITxAw',
             accept: 'application/json'
@@ -11,7 +11,7 @@ function getMovies(page) {
         .then(res => {
             results = res.data.results;
 
-            const movieContainer = document.getElementById('movieContainer');
+            const movies = document.getElementById('movies');
 
             results.forEach(result => {
                 const poster_url = 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path;
@@ -22,7 +22,7 @@ function getMovies(page) {
                 img.src = poster_url;
 
                 a.appendChild(img);
-                movieContainer.appendChild(a);
+                movies.appendChild(a);
             })
         })
         .catch(err => {
@@ -41,7 +41,7 @@ window.addEventListener('scroll', function () {
     var windowHeight = window.innerHeight;
     // 현재 웹사이트 전체 높이
     var documentHeight = document.body.clientHeight;
-    var scrollTrigger = 1; // 화면이 맨 끝에 도달했을 때
+    var scrollTrigger = 0.99; // 화면이 99% 아래에 도달했을 때
 
     if ((scrollPosition + windowHeight) >= (documentHeight * scrollTrigger)) {
         console.log('화면 끝 도달');

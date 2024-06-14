@@ -33,6 +33,19 @@ li {
 
 main .content-container {
     margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.main-title {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 5rem;
 }
 
 body.dark-mode {
@@ -186,6 +199,7 @@ body.dark-mode .toggle-button {
     background-color: #ff6565;
     right: 30px;
     bottom: 30px;
+    z-index: 100;
 }
 
 .scroll-up-btn img {
@@ -198,25 +212,33 @@ main {
     padding-top: 100px;
 }
 
-.movie-container {
-    margin: 2rem 0;
+#movies {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 50px;
 }
 
-.movie-container img {
+#movies img {
     height: 300px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #333333;
     transition: transform 0.3s ease; /* 부드러운 확대 효과를 위해 전환을 설정합니다. */
 }
 
-.movie-container img:hover {
+#movies img:hover {
     transform: scale(1.1); /* 마우스 오버 시 이미지를 1.1배 확대합니다. */
 }
 
 footer {
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 200px;
     background-color: #dddddd;
+}
+
+body.dark-mode footer {
+    background-color: #4c4c4c;
 }

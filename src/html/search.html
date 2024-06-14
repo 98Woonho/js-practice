@@ -1,18 +1,15 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- swiper.js -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/common.css">
-    <script src="../js/index.js" defer></script>
+    <link rel="stylesheet" href="/css/search.css">
+
+    <script src="../js/search.js" defer></script>
     <script src="../js/common.js" defer></script>
 
     <!-- axios -->
@@ -20,10 +17,9 @@
             integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <title>홈페이지</title>
+    <title>검색 결과</title>
 </head>
 <body>
-
 <header>
     <div class="content-container">
         <a href="index.html">
@@ -34,7 +30,7 @@
                 <a href="genre.html">GENRE</a>
             </li>
             <li>
-                <a href="nowPlaying.html">NOW PLAYING</a>
+                <a class="selected" href="nowPlaying.html">NOW PLAYING</a>
             </li>
             <li>
                 <a href="upcoming.html">UPCOMING</a>
@@ -58,38 +54,11 @@
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nO3VOw6CQBhF4dmBgi2F+1+Cj0YbNT4aOguXcgw6kQmBYQoT/iH3JCRESZgvt8A5pZRScwxYNpfLOaAEbv4qXcZLXGh7ACuXOSI/DFAAV3/w54/Q3jf/FS6DJc7+wC9gHUCqAHM3uwyw6CL875/8fRdTZoHoQkxjiCD6ICYxfBGnIcQQpAcz3XeGBEQMYgJDImIMMjkG2Abfhmrk2SikB7P5+4EjL94D9RgiFRJgamDnLJYKMR+CGEuLWEuLWEuLWEuLWEuLWEuLWEuLWEuLWGtOixyBw9TnUEoppVykN2KYhobLaYgPAAAAAElFTkSuQmCC">
     </button>
 
-    <div class="main-img-container">
-        <div class="text">
-            텍스트
-        </div>
-    </div>
-
     <div class="content-container">
-        <div class="popularity-TOP-10 content">
-            <h2>인기 TOP 10</h2>
-            <div id="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                </div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-        <div class="content">
-            <h2>Movie</h2>
-            <div id="movies"></div>
-        </div>
-    </div>
-</main
+        <h1 class="main-title">검색 결과</h1>
 
+        <div id="movies"></div>
+    </div>
+</main>
 </body>
 </html>

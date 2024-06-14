@@ -1,7 +1,7 @@
 let page = 1;
 
 // swiper 설정
-const mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('#swiper', {
     slidesPerView: 5,
     slidesPerGroup: 5,
     spaceBetween: 15,
@@ -52,7 +52,7 @@ function getMovies(page) {
         }
     })
         .then(res => {
-            const movieContainer = document.getElementById('movieContainer');
+            const movies = document.getElementById('movies');
             results = res.data.results;
 
             results.forEach(result => {
@@ -64,7 +64,7 @@ function getMovies(page) {
                 img.src = poster_url;
 
                 a.appendChild(img);
-                movieContainer.appendChild(a);
+                movies.appendChild(a);
             })
         })
         .catch(err => {

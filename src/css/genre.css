@@ -2,33 +2,34 @@ body {
     position: relative;
 }
 
-.btn-container button {
-    width: 100px;
-    height: 30px;
+#genreBtns button {
+    width: 103px;
+    height: 35px;
     border-radius: 20px;
     border: 1px solid #676767;
     background-color: #fdfdfd;
+    margin-bottom: 1rem;
 }
 
-.btn-container button:hover {
+#genreBtns button:hover {
     background-color: #d6d6d6;
 }
 
-.btn-container button.selected {
+#genreBtns button.selected {
     background-color: #d6d6d6;
 }
 
-body.dark-mode .btn-container button {
+body.dark-mode #genreBtns button {
     background-color: #171717;
     border: 1px solid #9c9c9c;
     color: #cfcfcf;
 }
 
-body.dark-mode .btn-container button:hover {
+body.dark-mode #genreBtns button:hover {
     background-color: #373737;
 }
 
-body.dark-mode .btn-container button.selected {
+body.dark-mode #genreBtns button.selected {
     background-color: #373737;
 }
 
@@ -42,3 +43,6 @@ body.dark-mode #sortSelect {
     color: #cfcfcf;
 }
 
+#movies {
+    padding-top: 2rem;
+}

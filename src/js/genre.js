@@ -1,16 +1,16 @@
 let page = 1;
 
 const handleGenre = (genreBtn) => {
-    const title = document.querySelector('main h1');
-    const movieContainer = document.getElementById('movieContainer');
-    const btns = document.querySelectorAll('.btn-container button');
+    const title = document.querySelector('.main-title');
+    const movies = document.getElementById('movies');
+    const genreBtns = document.querySelectorAll('#genreBtns button');
     page = 1;
 
     title.innerText = '장르별 영화 - ' + genreBtn.innerText;
 
-    movieContainer.innerHTML = '';
+    movies.innerHTML = '';
 
-    for (let btn of btns) {
+    for (let btn of genreBtns) {
         btn.classList.remove('selected');
     }
 
@@ -32,7 +32,7 @@ function getMovies(page, genre, sort, voteCountGte) {
             .then(res => {
                 results = res.data.results;
 
-                const movieContainer = document.getElementById('movieContainer');
+                const movies = document.getElementById('movies');
 
                 results.forEach(result => {
                     const poster_url = 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path;
@@ -43,7 +43,7 @@ function getMovies(page, genre, sort, voteCountGte) {
                     img.src = poster_url;
 
                     a.appendChild(img);
-                    movieContainer.appendChild(a);
+                    movies.appendChild(a);
                 })
             })
             .catch(err => {
@@ -59,7 +59,7 @@ function getMovies(page, genre, sort, voteCountGte) {
             .then(res => {
                 results = res.data.results;
 
-                const movieContainer = document.getElementById('movieContainer');
+                const movies = document.getElementById('movies');
 
                 results.forEach(result => {
                     const poster_url = 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path;
@@ -70,7 +70,7 @@ function getMovies(page, genre, sort, voteCountGte) {
                     img.src = poster_url;
 
                     a.appendChild(img);
-                    movieContainer.appendChild(a);
+                    movies.appendChild(a);
                 })
             })
             .catch(err => {
@@ -83,8 +83,8 @@ getMovies(1, '28', 'popularity.desc');
 
 // 정렬 선택
 const handleSortSelect = (select) => {
-    const movieContainer = document.getElementById('movieContainer');
-    const btns = document.querySelectorAll('.btn-container button');
+    const movies = document.getElementById('movies');
+    const btns = document.querySelectorAll('#genreBtns button');
 
     for (let btn of btns) {
         if (btn.classList.contains('selected')) {
@@ -92,7 +92,7 @@ const handleSortSelect = (select) => {
         }
     }
 
-    movieContainer.innerHTML = '';
+    movies.innerHTML = '';
 
     if (select.value === 'popularity.desc') {
         getMovies(1, id, select.value);
@@ -110,11 +110,11 @@ window.addEventListener('scroll', function () {
     var windowHeight = window.innerHeight;
     // 현재 웹사이트 전체 높이
     var documentHeight = document.body.clientHeight;
-    var scrollTrigger = 1; // 화면이 맨 끝에 도달했을 때
+    var scrollTrigger = 0.99; // 화면이 99% 아래에 도달했을 때
     let id;
 
-    const btns = document.querySelectorAll('.btn-container button');
-    for (let btn of btns) {
+    const genreBtns = document.querySelectorAll('#genreBtns button');
+    for (let btn of genreBtns) {
         if (btn.classList.contains('selected')) {
             id = btn.id;
         }
@@ -122,6 +122,7 @@ window.addEventListener('scroll', function () {
 
     if ((scrollPosition + windowHeight) >= (documentHeight * scrollTrigger)) {
         // 스크롤 트리거 지점에 도달했을 때 새로운 콘텐츠를 로드하는 함수 호출
+        console.log('화면 끝 도달');
         getMovies(++page, id);
     }
 });
