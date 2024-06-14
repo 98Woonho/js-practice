@@ -9,6 +9,31 @@ const mySwiper = new Swiper('#swiper', {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
     },
+    breakpoints: {
+        0: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 15
+        },
+        // 767px 이상에서는 4개의 슬라이드를 보여줌
+        550: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 15
+        },
+        // 991px 이상에서는 4개의 슬라이드를 보여줌
+        800: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            spaceBetween: 15
+        },
+        // 1200px 이상에서는 5개의 슬라이드를 보여줌
+        1200: {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+            spaceBetween: 15
+        }
+    }
 });
 
 // 인기 TOP 10 영화 목록 가져오기 {
