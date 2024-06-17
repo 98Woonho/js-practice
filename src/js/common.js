@@ -1,5 +1,7 @@
 const body = document.body;
 const titleInput = document.getElementById('titleInput');
+const menuIcon = document.getElementById('menuIcon');
+const dialog = document.getElementById('dialog');
 
 // 스크롤 맨 위로 이동 버튼 함수
 const handleScrollUpBtn = () => {
@@ -30,3 +32,13 @@ titleInput.addEventListener('input', function (e) {
 const handleSearch = () => {
     window.location.href = `search.html?title=${value}`;
 }
+
+menuIcon.addEventListener('click', function () {
+    dialog.classList.add('visible');
+})
+
+dialog.addEventListener('click', function (e) {
+    if (e.target === dialog) {
+        dialog.classList.remove('visible');
+    }
+})

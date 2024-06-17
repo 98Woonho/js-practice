@@ -20,6 +20,24 @@
     <title>장르별</title>
 </head>
 <body>
+
+<div id="dialog">
+    <div id="menu">
+        <h1>로고</h1>
+        <ul>
+            <li>
+                <a href="genre.html">GENRE</a>
+            </li>
+            <li>
+                <a href="nowPlaying.html">NOW PLAYING</a>
+            </li>
+            <li>
+                <a href="upcoming.html">UPCOMING</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <header>
     <div class="content-container">
         <a href="index.html">
@@ -36,7 +54,8 @@
                 <a href="upcoming.html">UPCOMING</a>
             </li>
         </ul>
-        <img id="menuIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg==">
+        <img id="menuIcon"
+             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg==">
         <div class="flex-1"></div>
         <div class="search-box">
             <input type="text" id="titleInput" placeholder="제목을 입력하세요">
@@ -58,28 +77,25 @@
 
     <div class="content-container">
         <h1 class="main-title">장르별 영화</h1>
-
-        <div class="content">
-            <div id="genreBtns">
-                <button id="28" class="selected" onClick="handleGenre(this)">액션</button>
-                <button id="12" onClick="handleGenre(this)">모험</button>
-                <button id="16" onClick="handleGenre(this)">애니메이션</button>
-                <button id="35" onClick="handleGenre(this)">코미디</button>
-                <button id="80" onClick="handleGenre(this)">범죄</button>
-                <button id="18" onClick="handleGenre(this)">드라마</button>
-                <button id="10751" onClick="handleGenre(this)">가족</button>
-                <button id="14" onClick="handleGenre(this)">판타지</button>
-                <button id="36" onClick="handleGenre(this)">역사</button>
-                <button id="27" onClick="handleGenre(this)">공포</button>
-                <button id="10402" onClick="handleGenre(this)">음악</button>
-                <button id="9648" onClick="handleGenre(this)">미스터리</button>
-                <button id="10749" onClick="handleGenre(this)">로맨스</button>
-                <button id="878" onClick="handleGenre(this)">SF</button>
-                <button id="10770" onClick="handleGenre(this)">TV 영화</button>
-                <button id="53" onClick="handleGenre(this)">스릴러</button>
-                <button id="10752" onClick="handleGenre(this)">전쟁</button>
-                <button id="37" onClick="handleGenre(this)">서부</button>
-            </div>
+        <div id="genreBtns">
+            <button id="28" class="selected" onClick="handleGenre(this)">액션</button>
+            <button id="12" onClick="handleGenre(this)">모험</button>
+            <button id="16" onClick="handleGenre(this)">애니메이션</button>
+            <button id="35" onClick="handleGenre(this)">코미디</button>
+            <button id="80" onClick="handleGenre(this)">범죄</button>
+            <button id="18" onClick="handleGenre(this)">드라마</button>
+            <button id="10751" onClick="handleGenre(this)">가족</button>
+            <button id="14" onClick="handleGenre(this)">판타지</button>
+            <button id="36" onClick="handleGenre(this)">역사</button>
+            <button id="27" onClick="handleGenre(this)">공포</button>
+            <button id="10402" onClick="handleGenre(this)">음악</button>
+            <button id="9648" onClick="handleGenre(this)">미스터리</button>
+            <button id="10749" onClick="handleGenre(this)">로맨스</button>
+            <button id="878" onClick="handleGenre(this)">SF</button>
+            <button id="10770" onClick="handleGenre(this)">TV 영화</button>
+            <button id="53" onClick="handleGenre(this)">스릴러</button>
+            <button id="10752" onClick="handleGenre(this)">전쟁</button>
+            <button id="37" onClick="handleGenre(this)">서부</button>
         </div>
 
         <select onChange="handleSortSelect(this)" id="sortSelect">

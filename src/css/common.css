@@ -1,3 +1,7 @@
+body {
+    position: relative;
+}
+
 .flex-1 {
     flex: 1;
 }
@@ -23,6 +27,40 @@ button {
 
 li {
     list-style: none;
+}
+
+#dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    backdrop-filter: blur(0.175rem);
+    display: none;
+    z-index: 999;
+}
+
+#dialog.visible {
+    display: block;
+}
+
+#dialog #menu {
+    padding: 2rem;
+    position: relative;
+    max-width: 400px;
+    height: 100%;
+    background-color: #f3f3f3;
+    animation: slideIn 0.35s ease;
+}
+
+#dialog #menu h1 {
+    margin-bottom: 1rem;
+}
+
+#dialog #menu li {
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode #dialog #menu {
+    background-color: #757070;
 }
 
 .content-container {
@@ -54,7 +92,7 @@ body.dark-mode {
 }
 
 header {
-    z-index: 999;
+    z-index: 1;
     width: 100vw;
     position: fixed;
     background-color: #f3f3f3;
@@ -117,7 +155,6 @@ body.dark-mode header .content-container ul li a:hover {
     border-bottom: 0.175rem solid #cfcfcf;
 }
 
-
 .search-box {
     position: relative;
 
@@ -168,14 +205,13 @@ body.dark-mode .dark-mode-toggle {
 }
 
 .dark-mode-toggle img {
-    width: 30px;
-    height: 30px;
+    width: 40%;
 }
 
 .toggle-button {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 37.5%;
+    height: 75%;
     border-radius: 50%;
     background-color: white;
     left: 5px;
@@ -188,7 +224,7 @@ body.dark-mode .dark-mode-toggle {
 }
 
 body.dark-mode .toggle-button {
-    left: 45px;
+    left: 55%;
 }
 
 .scroll-up-btn {
@@ -275,12 +311,14 @@ body.dark-mode footer {
         padding: 0 0.5rem;
     }
 
-    .dark-mode-toggle {
-        margin: unset;
+    .search-box input {
+        width: 225px;
+        height: 30px;
     }
 
-    .search-box input {
-        width: 200px;
+    .dark-mode-toggle {
+        width: 60px;
+        height: 30px;
     }
 }
 
@@ -310,12 +348,14 @@ body.dark-mode footer {
         justify-content: space-between;
     }
 
-    .dark-mode-toggle {
-        margin: unset;
-    }
-
     .search-box input {
         width: 300px;
+        height: 35px;
+    }
+
+    .dark-mode-toggle {
+        width: 70px;
+        height: 35px;
     }
 }
 
@@ -345,10 +385,6 @@ body.dark-mode footer {
         justify-content: space-around;
     }
 
-    .dark-mode-toggle {
-        margin: unset;
-    }
-
     .search-box input {
         width: 350px;
     }
@@ -369,5 +405,14 @@ body.dark-mode footer {
 @media all and (min-width: 1201px) {
     #movies {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* 초기 위치를 왼쪽 밖으로 이동시킵니다. */
+    }
+    100% {
+        transform: translateX(0); /* 최종 위치를 원래 위치로 이동시킵니다. */
     }
 }
