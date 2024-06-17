@@ -1,8 +1,5 @@
-main {
-    position: relative;
-}
-
 .main-img-container {
+    position: relative;
     width: 100vw;
     height: 600px;
     background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") fixed;
@@ -11,8 +8,8 @@ main {
 
 .main-img-container .text {
     position: absolute;
-    top: 300px;
-    left: 150px;
+    top: 40%;
+    left: 10%;
 }
 
 .popularity-TOP-10 {
@@ -38,4 +35,54 @@ main {
 
 .swiper-slide img:hover {
     transform: scale(1.1); /* 마우스 오버 시 이미지를 1.1배 확대합니다. */
+}
+
+/* 세로모드 모바일 디바이스 */
+@media all and (max-width: 575px) {
+    #movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-img-container {
+        background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+        height: 350px;
+        background-size: cover;
+    }
+}
+
+/* 가로모드 모바일 디바이스 */
+@media all and (min-width: 576px) and (max-width: 767px) {
+    #movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-img-container {
+        background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+        height: 400px;
+        background-size: cover;
+    }
+}
+
+/* 태블릿 디바이스 */
+@media all and (min-width: 768px) and (max-width: 991px) {
+    #movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main-img-container {
+        background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+        height: 500px;
+        background-size: cover;
+    }
+}
+
+/*태블릿 디바이스*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    .main-img-container {
+        height: 500px;
+    }
+}
+
+/*데스크탑*/
+@media all and (min-width: 1201px) {
 }

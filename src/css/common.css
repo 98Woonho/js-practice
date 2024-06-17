@@ -155,13 +155,9 @@ body.dark-mode header .content-container ul li a:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
     padding: 5px;
-
-    margin-left: 50px;
     width: 80px;
     height: 40px;
-
     background-color: #333333;
     border-radius: 30px;
     box-shadow: 1px 1px 5px #333333;
@@ -246,6 +242,11 @@ body.dark-mode footer {
     background-color: #4c4c4c;
 }
 
+#menuIcon {
+    width: 30px;
+    height: 30px;
+}
+
 
 /* 세로모드 모바일 디바이스 */
 @media all and (max-width: 575px) {
@@ -253,7 +254,7 @@ body.dark-mode footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    header .logo {
+    header .content-container > a {
         display: none;
     }
 
@@ -271,6 +272,7 @@ body.dark-mode footer {
 
     header .content-container {
         justify-content: space-between;
+        padding: 0 0.5rem;
     }
 
     .dark-mode-toggle {
@@ -278,7 +280,7 @@ body.dark-mode footer {
     }
 
     .search-box input {
-        width: 150px;
+        width: 200px;
     }
 }
 
@@ -288,7 +290,7 @@ body.dark-mode footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    header .logo {
+    header .content-container > a {
         display: none;
     }
 
@@ -323,7 +325,7 @@ body.dark-mode footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header .logo {
+    header .content-container > a {
         display: none;
     }
 
@@ -340,11 +342,15 @@ body.dark-mode footer {
     }
 
     header .content-container {
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .dark-mode-toggle {
         margin: unset;
+    }
+
+    .search-box input {
+        width: 350px;
     }
 }
 
@@ -352,6 +358,10 @@ body.dark-mode footer {
 @media all and (min-width: 991px) and (max-width: 1200px) {
     #movies {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .search-box input {
+        width: 350px;
     }
 }
 
