@@ -6,10 +6,21 @@
     background-size: cover;
 }
 
-.main-img-container .text {
+.main-img-container div {
+    color: white;
     position: absolute;
     top: 40%;
-    left: 10%;
+    left: 15%;
+}
+
+.main-img-container div p {
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+.main-img-container div span {
+    font-size: 3.5rem;
+    font-weight: 600;
 }
 
 .popularity-TOP-10 {
@@ -48,6 +59,19 @@
         height: 350px;
         background-size: cover;
     }
+
+    .main-img-container div {
+        left: 2%;
+    }
+
+    .main-img-container div p {
+        font-size: 0.75rem;
+    }
+
+    .main-img-container div span {
+        font-size: 2.25rem;
+        font-weight: 600;
+    }
 }
 
 /* 가로모드 모바일 디바이스 */
@@ -61,6 +85,19 @@
         height: 400px;
         background-size: cover;
     }
+
+    .main-img-container div {
+        left: 5%;
+    }
+
+    .main-img-container div p {
+        font-size: 1rem;
+    }
+
+    .main-img-container div span {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
 }
 
 /* 태블릿 디바이스 */
@@ -73,6 +110,19 @@
         background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
         height: 500px;
         background-size: cover;
+    }
+
+    .main-img-container div {
+        left: 10%;
+    }
+
+    .main-img-container div p {
+        font-size: 1rem;
+    }
+
+    .main-img-container div span {
+        font-size: 3rem;
+        font-weight: 600;
     }
 }
 

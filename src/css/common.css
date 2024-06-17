@@ -47,8 +47,12 @@ li {
     position: relative;
     max-width: 400px;
     height: 100%;
-    background-color: #f3f3f3;
+    background-color: #e3e3e3;
     animation: slideIn 0.35s ease;
+}
+
+body.dark-mode #dialog #menu {
+    background-color: #757070;
 }
 
 #dialog #menu h1 {
@@ -59,8 +63,11 @@ li {
     margin-bottom: 0.5rem;
 }
 
-body.dark-mode #dialog #menu {
-    background-color: #757070;
+.menu-close-icon {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    right: 20px;
 }
 
 .content-container {
@@ -92,7 +99,7 @@ body.dark-mode {
 }
 
 header {
-    z-index: 1;
+    z-index: 2;
     width: 100vw;
     position: fixed;
     background-color: #f3f3f3;
@@ -100,6 +107,7 @@ header {
 }
 
 #menuIcon {
+    cursor: pointer;
     display: none;
 }
 
@@ -109,6 +117,7 @@ body.dark-mode header {
 
 header .logo {
     cursor: pointer;
+    width: 130px;
 }
 
 header .content-container {
@@ -164,7 +173,7 @@ body.dark-mode header .content-container ul li a:hover {
 }
 
 .search-box input {
-    width: 500px;
+    width: 400px;
     height: 40px;
     padding: 0 2.5rem 0 1rem;
 
@@ -277,6 +286,7 @@ footer {
 body.dark-mode footer {
     background-color: #4c4c4c;
 }
+
 
 #menuIcon {
     width: 30px;
@@ -397,7 +407,7 @@ body.dark-mode footer {
     }
 
     .search-box input {
-        width: 350px;
+        width: 300px;
     }
 }
 

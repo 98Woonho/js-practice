@@ -23,6 +23,8 @@
 
 <div id="dialog">
     <div id="menu">
+        <img onClick="handleMenuCloseIcon()" id="menuCloseIcon" class="menu-close-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WMQ6DMBAEwCmSH9EE6Hls8jooUgZZwj9Axig7H9jT+mQdEeeZsVwZvuGLoXX4hBU/fPBMeAtTapeF+5eFex0/XAl/49EyvIsBivHKJ6gyRJUmqjRRpYkujtIuzvK4rx0LgD7wv0U1yAAAAABJRU5ErkJggg==">
+        <img onClick="handleMenuCloseIcon()" id="menuCloseIconDarkMode" class="menu-close-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAeklEQVR4nO3Wuw2AMBADUArYiIZPz7CwQxbI2TcLFJQgJLIBnyD8FvDJ+eiKQuQi7t67+/BaOICF5Gpm9aPhJDsAM8mN5BRjrBR+O6p26sLFnzw1M2vOH+4IH0MI5WPhWQxwANC+dgSJhkjURKImEjWRxVKaxVoun7YDxpJNSlWTXy4AAAAASUVORK5CYII=">
         <h1>로고</h1>
         <ul>
             <li>
@@ -41,7 +43,7 @@
 <header>
     <div class="content-container">
         <a href="index.html">
-            <h1 class="logo">로고</h1>
+            <img class="logo" src="https://fontmeme.com/permalink/240617/779fe9f0e758c742b470a10909de4b81.png" alt="MOVIEFOLIO">
         </a>
         <ul>
             <li>
@@ -54,7 +56,7 @@
                 <a href="upcoming.html">UPCOMING</a>
             </li>
         </ul>
-        <img id="menuIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg==">
+        <img onClick="handleMenuIcon()" id="menuIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg==">
         <div class="flex-1"></div>
         <div class="search-box">
             <input type="text" id="titleInput" placeholder="제목을 입력하세요">
@@ -76,7 +78,6 @@
 
     <div class="content-container">
         <h1 class="main-title">검색 결과</h1>
-
         <div id="movies"></div>
     </div>
 </main>
