@@ -42,6 +42,10 @@ li {
     display: block;
 }
 
+#dialog .logo {
+    width: 200px;
+}
+
 #dialog #menu {
     padding: 2rem;
     position: relative;
@@ -77,8 +81,7 @@ body.dark-mode #dialog #menu {
 }
 
 main .content-container {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin: 5rem 1rem 5rem 1rem;
 }
 
 .main-title {
@@ -330,6 +333,10 @@ body.dark-mode footer {
         width: 60px;
         height: 30px;
     }
+
+    footer .logo {
+        width: 200px;
+    }
 }
 
 /* 가로모드 모바일 디바이스 */
@@ -415,6 +422,10 @@ body.dark-mode footer {
 @media all and (min-width: 1201px) {
     #movies {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    main .content-container {
+        margin: 0 auto;
     }
 }
 

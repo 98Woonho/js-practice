@@ -1,3 +1,6 @@
+const mainImgText = document.getElementById('mainImgText');
+mainImgText.classList.add('effect');
+
 let page = 1;
 
 // swiper 설정
@@ -81,7 +84,7 @@ function getMovies(page) {
             results = res.data.results;
 
             results.forEach(result => {
-                const poster_url = 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path;
+                const poster_url = result.poster_path ? 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path : '../imgs/no-photo.jpg';
                 const a = document.createElement('a');
                 const img = document.createElement('img');
 
@@ -111,8 +114,8 @@ window.addEventListener('scroll', function () {
     var scrollTrigger = 1; // 화면이 맨 끝에 도달했을 때
 
     if ((scrollPosition + windowHeight) >= (documentHeight * scrollTrigger)) {
-        console.log('화면 끝 도달');
         // 스크롤 트리거 지점에 도달했을 때 새로운 콘텐츠를 로드하는 함수 호출
         getMovies(++page);
     }
 });
+

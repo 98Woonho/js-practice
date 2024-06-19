@@ -6,19 +6,29 @@
     background-size: cover;
 }
 
-.main-img-container div {
+#mainImgText {
     color: white;
     position: absolute;
     top: 40%;
-    left: 15%;
+    left: 0;
+    opacity: 0;
+
+    transition-duration: 0.75s;
+    transition-property: left, opacity;
+    transition-timing-function: ease;
 }
 
-.main-img-container div p {
+#mainImgText.effect {
+    opacity: 1;
+}
+
+#mainImgText p {
     font-size: 1.5rem;
     font-weight: 550;
 }
 
-.main-img-container div span {
+#mainImgText span {
+    color: #ff6565;
     font-size: 3.5rem;
     font-weight: 600;
 }
@@ -57,18 +67,17 @@
     .main-img-container {
         background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
         height: 350px;
-        background-size: cover;
     }
 
-    .main-img-container div {
-        left: 2%;
+    #mainImgText.effect {
+        left: 3%;
     }
 
-    .main-img-container div p {
+    #mainImgText p {
         font-size: 0.75rem;
     }
 
-    .main-img-container div span {
+    #mainImgText span {
         font-size: 2.25rem;
         font-weight: 600;
     }
@@ -83,18 +92,17 @@
     .main-img-container {
         background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
         height: 400px;
-        background-size: cover;
     }
 
-    .main-img-container div {
+    #mainImgText.effect {
         left: 5%;
     }
 
-    .main-img-container div p {
+    #mainImgText p {
         font-size: 1rem;
     }
 
-    .main-img-container div span {
+    #mainImgText span {
         font-size: 2.5rem;
         font-weight: 600;
     }
@@ -109,18 +117,17 @@
     .main-img-container {
         background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
         height: 500px;
-        background-size: cover;
     }
 
-    .main-img-container div {
+    #mainImgText.effect {
         left: 10%;
     }
 
-    .main-img-container div p {
+    #mainImgText p {
         font-size: 1rem;
     }
 
-    .main-img-container div span {
+    #mainImgText span {
         font-size: 3rem;
         font-weight: 600;
     }
@@ -131,8 +138,15 @@
     .main-img-container {
         height: 500px;
     }
+
+    #mainImgText.effect {
+        left: 15%;
+    }
 }
 
 /*데스크탑*/
 @media all and (min-width: 1201px) {
+    #mainImgText.effect {
+        left: 15%;
+    }
 }

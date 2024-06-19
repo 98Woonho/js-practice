@@ -14,7 +14,7 @@ function getMovies(page) {
             const movies = document.getElementById('movies');
 
             results.forEach(result => {
-                const poster_url = 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path;
+                const poster_url = result.poster_path ? 'https://media.themoviedb.org/t/p/w220_and_h330_face' + result.poster_path : '../imgs/no-photo.jpg';
                 const a = document.createElement('a');
                 const img = document.createElement('img');
 

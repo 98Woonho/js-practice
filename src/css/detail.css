@@ -4,7 +4,7 @@
     gap: 2rem;
     padding: 2rem;
 
-    border: 1px solid #f3f3f3;
+    border: 1px solid #9e9e9e;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #4a4a4a;
 }
@@ -76,6 +76,9 @@
     #movieInfo {
         display: flex;
         flex-direction: column;
+        border: unset;
+        border-radius: unset;
+        box-shadow: unset;
     }
 }
 
