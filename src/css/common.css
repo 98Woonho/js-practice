@@ -81,7 +81,7 @@ body.dark-mode #dialog #menu {
 }
 
 main .content-container {
-    margin: 5rem 1rem 5rem 1rem;
+    margin: 5rem 1rem;
 }
 
 .main-title {
@@ -425,7 +425,7 @@ body.dark-mode footer {
     }
 
     main .content-container {
-        margin: 0 auto;
+        margin: 5rem auto;
     }
 }
 
