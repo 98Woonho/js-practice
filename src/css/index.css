@@ -1,7 +1,7 @@
 .main-img-container {
     position: relative;
     width: 100vw;
-    height: 600px;
+    height: 800px;
     background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") fixed;
     background-size: cover;
 }
@@ -116,7 +116,7 @@
 
     .main-img-container {
         background: url("https://images.pexels.com/photos/7991259/pexels-photo-7991259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
-        height: 500px;
+        height: 550px;
     }
 
     #mainImgText.effect {
@@ -136,7 +136,7 @@
 /*태블릿 디바이스*/
 @media all and (min-width: 991px) and (max-width: 1200px) {
     .main-img-container {
-        height: 500px;
+        height: 700px;
     }
 
     #mainImgText.effect {

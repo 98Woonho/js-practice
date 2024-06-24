@@ -29,7 +29,7 @@ function getMovie() {
             } else {
                 progress.style.backgroundColor = '#4ec12b';
             }
-            poster.src = `https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`;
+            poster.src = movie.poster_path ? 'https://media.themoviedb.org/t/p/w220_and_h330_face' + movie.poster_path : '../imgs/no-photo.jpg';
             movieTitle.innerText = movie.title;
             genres.innerText = movie.genres.map(genre => genre.name).join(', ');
             voteAverage.innerText = `회원 평점 : ${Math.round(movie.vote_average * 10)}%`;

@@ -42,6 +42,10 @@ li {
     display: block;
 }
 
+#dialog ul {
+    margin-top: 2rem;
+}
+
 #dialog .logo {
     width: 200px;
 }
