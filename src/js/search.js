@@ -12,6 +12,7 @@ function getMovies(page) {
     })
         .then(res => {
             results = res.data.results;
+            console.log(results);
 
             const movies = document.getElementById('movies');
 

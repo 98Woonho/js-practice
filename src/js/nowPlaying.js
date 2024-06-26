@@ -1,8 +1,13 @@
 let page = 1;
 
+const today = new Date();
+const releaseDateLte = today.toISOString().slice(0, 10);
+today.setDate(today.getDate() - 60);
+const releaseDateGte = today.toISOString().slice(0, 10);
+
 // 페이지 별 영화 목록 가져오기
 function getMovies(page) {
-    axios.get(`https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=${page}`, {
+    axios.get(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=${page}&primary_release_date.gte=${releaseDateGte}&primary_release_date.lte=${releaseDateLte}&sort_by=popularity.desc`, {
         headers: {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGQ2YjY5OGJkZjMyNDk0ZmU1NDYzOGU3ZmVmNjk4YiIsInN1YiI6IjY2NjY0YzIxNTlmMjE0ODE2OGExNTM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kwltZDxWbQYihnw7WWODdmwrkr8DpVUSZZRmYiITxAw',
             accept: 'application/json'
